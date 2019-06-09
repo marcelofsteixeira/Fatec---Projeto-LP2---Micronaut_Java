@@ -14,12 +14,12 @@ import io.reactivex.Single;
 public class ControllerJson {
 	
 	    @Get("/maratona")
-	    public Single<String> helloGet(String name) {
+	    public Single<String> helloGet() {
 	        return Single.just("Chamado Get");
 	    }
 	    
 	    @Post("/maratona")
-	    public Single<String> helloPost(String name) {
+	    public Single<String> helloPost() {
 	        return Single.just("Chamado Post");
 	    }
 	
