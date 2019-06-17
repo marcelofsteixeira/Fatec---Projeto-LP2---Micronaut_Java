@@ -27,15 +27,20 @@ public class ProcPython {
 		String timeSig = Long.toString(System.currentTimeMillis());
 		String folderPath= System.getProperty("user.dir")+File.separator+"Run"+entrada.getProblem()+timeSig;
 		String pyPath=null;
+		//Pasta e criada com um nome do tipo RunPxxxx, sendo P o id do problema e xxxx a contagem do horario em milisegundos
 		if(new File(folderPath).mkdirs()) pyPath = folderPath+File.separator+entrada.getFilename();
 		String source = new String(Base64.getDecoder().decode(entrada.getSourcecode()));
+		//E criado um arquivo.py nessa pasta
 		Writer sourceWriter= new PrintWriter(pyPath);
 		sourceWriter.write(source);
 		sourceWriter.close();
 		String resul = null;
+		//Dependendo do problema, sao executados casos de testes e verificacoes especificas
 		if (entrada.getProblem().equals("A")) resul=ProcA(pyPath, folderPath);
 		if (entrada.getProblem().equals("B")) resul=ProcB(pyPath, folderPath);
+		//Log de execucao e salvo
 		Application.getLogs().add(new Log(entrada.getFilename(), entrada.getProblem(), entrada.getSourcecode(), resul ));
+		//Objeto Saida e retornado
 		return new Saida(entrada.getFilename(), entrada.getProblem(), resul);
 	}
 
