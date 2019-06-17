@@ -27,7 +27,7 @@ public class ProcPython {
 		String timeSig = Long.toString(System.currentTimeMillis());
 		String folderPath= System.getProperty("user.dir")+File.separator+"Run"+entrada.getProblem()+timeSig;
 		String pyPath=null;
-		if(new File(folderPath).mkdirs()) pyPath = folderPath+File.separator+"run.py";;
+		if(new File(folderPath).mkdirs()) pyPath = folderPath+File.separator+entrada.getFilename();
 		String source = new String(Base64.getDecoder().decode(entrada.getSourcecode()));
 		Writer sourceWriter= new PrintWriter(pyPath);
 		sourceWriter.write(source);
@@ -35,6 +35,7 @@ public class ProcPython {
 		String resul = null;
 		if (entrada.getProblem().equals("A")) resul=ProcA(pyPath, folderPath);
 		if (entrada.getProblem().equals("B")) resul=ProcB(pyPath, folderPath);
+		Application.getLogs().add(new Log(entrada.getFilename(), entrada.getProblem(), entrada.getSourcecode(), resul ));
 		return new Saida(entrada.getFilename(), entrada.getProblem(), resul);
 	}
 
