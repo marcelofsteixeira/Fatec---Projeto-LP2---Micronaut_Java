@@ -1,20 +1,22 @@
 package maratona.micronaut;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Log {
 	private String filename;
-	private char problem;
-	private String sourcode;
-	private Date datetime;
+	private String problem;
+	private String sourcecode;
+	private String datetime;
 	private String status;
 	
-	public Log(String filename, char problem, String sourcode, Date datetime, String status) {
+	public Log(String filename, String problem, String sourcecode, String status) {
 		super();
 		this.filename = filename;
 		this.problem = problem;
-		this.sourcode = sourcode;
-		this.datetime = datetime;
+		this.sourcecode = sourcecode;
+		SimpleDateFormat df=new SimpleDateFormat("dd-MM-YY:HH:mm");
+		this.datetime = df.format(new Date());
 		this.status = status;
 	}
 	public String getFilename() {
@@ -23,22 +25,22 @@ public class Log {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public char getProblem() {
+	public String getProblem() {
 		return problem;
 	}
-	public void setProblem(char problem) {
+	public void setProblem(String problem) {
 		this.problem = problem;
 	}
-	public String getSourcode() {
-		return sourcode;
+	public String getSourcecode() {
+		return sourcecode;
 	}
-	public void setSourcode(String sourcode) {
-		this.sourcode = sourcode;
+	public void setSourcecode(String sourcecode) {
+		this.sourcecode = sourcecode;
 	}
-	public Date getDatetime() {
+	public String getDatetime() {
 		return datetime;
 	}
-	public void setDatetime(Date datetime) {
+	public void setDatetime(String datetime) {
 		this.datetime = datetime;
 	}
 	public String getStatus() {
