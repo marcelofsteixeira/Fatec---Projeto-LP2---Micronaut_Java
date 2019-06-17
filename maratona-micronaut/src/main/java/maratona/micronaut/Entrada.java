@@ -1,32 +1,42 @@
 package maratona.micronaut;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Entrada {
 	private String filename;
-	private char problem;
-	private String sourcode;
-	public Entrada(String filename, char problem, String sourcode) {
+	private String problem;
+	private String sourcecode;
+	
+	@JsonCreator
+	public Entrada(@JsonProperty ("filename") String filename, @JsonProperty ("problem") String problem, @JsonProperty ("sourcecode") String sourcecode) {
 		super();
 		this.filename = filename;
 		this.problem = problem;
-		this.sourcode = sourcode;
+		this.sourcecode = sourcecode;
 	}
+	
+	
+	
+	
+	
 	public String getFilename() {
 		return filename;
 	}
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public char getProblem() {
+	public String getProblem() {
 		return problem;
 	}
-	public void setProblem(char problem) {
+	public void setProblem(String problem) {
 		this.problem = problem;
 	}
-	public String getSourcode() {
-		return sourcode;
+	public String getSourcecode() {
+		return sourcecode;
 	}
-	public void setSourcode(String sourcode) {
-		this.sourcode = sourcode;
+	public void setSourcecode(String sourcecode) {
+		this.sourcecode = sourcecode;
 	}
 
 }
