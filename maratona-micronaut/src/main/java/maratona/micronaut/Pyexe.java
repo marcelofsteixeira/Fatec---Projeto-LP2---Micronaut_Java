@@ -12,7 +12,7 @@ public class Pyexe {
 	BufferedReader pybuffreader;
 	BufferedWriter pybuffwriter;
 	public Pyexe(String filecmd) throws IOException{
-		//A classe necessita do caminho do interpretador Python no sistema. Nesse caso, o caminho foi acessado por uma variavel de ambiente de nome PythonPath
+		//A classe necessita do caminho do interpretador Python no sistema. Nesse caso, o caminho foi acessado por uma variavel de ambiente de nome PYTHON_PATH
 		String python_path= System.getenv("PYTHON_PATH");
 	    pypr=Runtime.getRuntime().exec("cmd /c "+ python_path+" "+filecmd);
 	    pybuffreader=new BufferedReader(new InputStreamReader(pypr.getInputStream()));
