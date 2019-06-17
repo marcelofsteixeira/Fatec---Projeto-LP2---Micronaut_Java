@@ -2,9 +2,9 @@ package maratona.micronaut;
 
 public class Saida {
 	private String filename;
-	private char problem;
+	private String problem;
 	private String status;
-	public Saida(String filename, char problem, String status) {
+	public Saida(String filename, String problem, String status) {
 		super();
 		this.filename = filename;
 		this.problem = problem;
@@ -16,10 +16,10 @@ public class Saida {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public char getProblem() {
+	public String getProblem() {
 		return problem;
 	}
-	public void setProblem(char problem) {
+	public void setProblem(String problem) {
 		this.problem = problem;
 	}
 	public String getStatus() {
