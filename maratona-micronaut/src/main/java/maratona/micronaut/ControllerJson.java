@@ -19,8 +19,9 @@ public class ControllerJson {
 	    }
 	    
 	    @Post("/maratona")
-	    public Single<String> helloPost() {
-	        return Single.just("Chamado Post");
+	     public Single<Saida> verifCod(@Size (max=2048) @Body Entrada entro ) throws IOException, InterruptedException {
+	    	ProcPython pro = new ProcPython(entro);
+	        return Single.just(pro.validarCod());
 	    }
 	
 	
