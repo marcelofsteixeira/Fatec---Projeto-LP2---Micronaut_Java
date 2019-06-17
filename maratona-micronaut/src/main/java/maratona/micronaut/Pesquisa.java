@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Pesquisa {
-	
+	//O metodo pesquisarLogs recebe um Map da pesquisa no formato String,String, contendo o tipo da pesquisa e o valor pesquisado, respectivamente.
+	//Dependendo do tipo de pesquisa, o metodo percorre a lista dos objetos Log salvos e retorna aqueles com o valor correspondente ao pesquisado.
 	public static List<Log> pesquisarLogs(Map<String, String> pesq){
 		
 		ArrayList<String> campoPesq=new ArrayList<String>(pesq.keySet());
