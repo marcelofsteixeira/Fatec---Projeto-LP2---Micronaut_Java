@@ -13,9 +13,9 @@ import io.reactivex.Single;
 @Controller("/application/Json") 
 public class ControllerJson {
 	
-	    @Get("/maratona")
-	    public Single<String> helloGet() {
-	        return Single.just("Chamado Get");
+	    @Get("/maratona{?pesq*}")
+	    public List<Log> pesq (Map<String, String> pesq) {
+	    	return Pesquisa.pesquisarLogs(pesq);
 	    }
 	    
 	    //Chamado que recebe um Json com os mesmos atributos de um objeto Entrada no caminho "/application/Json/maratona"
