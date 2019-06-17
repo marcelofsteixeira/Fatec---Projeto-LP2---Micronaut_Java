@@ -47,7 +47,6 @@ public class ProcPython {
 	
 	public void runPy(String pyPath, String folderPath, String arqSaida, String inputFile) throws IOException, InterruptedException {
 		String input = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"InputsPython"+File.separator+inputFile)), StandardCharsets.UTF_8);
-		System.out.println("Input "+arqSaida+": "+ input);
 		Pyexe pyexe=new Pyexe(pyPath+" >"+folderPath+File.separator+arqSaida);
 		pyexe.Pyrun(input);
 	}
@@ -78,23 +77,13 @@ public class ProcPython {
 			return false;
 		}
 		
-	/*String result;  
-	String expected = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir")+File.separator+"SaidasEsperadas"+File.separator+esperado)), StandardCharsets.UTF_8);
 	
-		try {
-			result = new String(Files.readAllBytes(Paths.get(folderPath+File.separator+criado)), StandardCharsets.UTF_8);
-			System.out.println("Result "+criado+": "+ result);
-		} catch (NullPointerException e) {
-			System.out.println("BUGADO "+criado);
-			result="ARQVAZIO";
-		}
-		return result.equals(expected);*/
 	}
 	
 	
 	public Saida validarCod() throws IOException, InterruptedException {
 		String timeSig = Long.toString(System.currentTimeMillis());
-		String folderPath= System.getProperty("user.dir")+File.separator+"test"+entrada.getProblem()+timeSig;
+		String folderPath= System.getProperty("user.dir")+File.separator+"Run"+entrada.getProblem()+timeSig;
 		String pyPath=null;
 		if(new File(folderPath).mkdirs()) pyPath = folderPath+File.separator+"run.py";;
 		String source = new String(Base64.getDecoder().decode(entrada.getSourcecode()));
