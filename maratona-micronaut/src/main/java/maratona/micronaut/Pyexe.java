@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-//Classe que contem um processo de arquivo Python com buffers de input e output. O processo Pyrun insere uma String de imputs para o processo e o finaliza.
+//Classe que contem um processo de codigo Python com buffers de input e output. O processo Pyrun insere uma String de imputs para o processo e o finaliza.
 public class Pyexe {
 	Process pypr;
 	BufferedReader pybuffreader;
