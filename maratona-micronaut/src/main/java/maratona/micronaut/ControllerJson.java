@@ -4,7 +4,6 @@ package maratona.micronaut;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
