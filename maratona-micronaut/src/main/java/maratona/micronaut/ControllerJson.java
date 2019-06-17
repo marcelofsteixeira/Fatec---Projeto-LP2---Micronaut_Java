@@ -1,12 +1,17 @@
 package maratona.micronaut;
 
 
-import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.*;
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.Post;
-import io.micronaut.http.annotation.Produces;
+import io.micronaut.http.annotation.Body;
 import io.reactivex.Single;
+import io.micronaut.http.annotation.Controller;
+
 
 
 
